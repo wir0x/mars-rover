@@ -1,0 +1,238 @@
+Mars Rovers:
+
+- ANALISIS DEL PROBLEMA
+
+	Astro Móviles (AM) deben ser aterrizados por la NASA en un altiplano (curiosamente rectangular) en el planeta Marte , estos AM deben navegar por el terreno para que sus camaras puedan obtener una vision complenta del terreno, que posteriormente seran enviados al planeta Tierra
+
+	La posición y la ubicación de AM está representado por coordenas (x,y) y una letra que representa uno de los cuatro puntos cardinales (E,W,N,S).
+
+	El altiplano se divide en cuadriculas (grillas) para simplificar su navegación. Un ejemplo de posicion seria: 0,0,N - Esto significa que el AM esta en la esquina inferior izquierda y mirando hacia el norte.
+
+	Para controlar el AM, la NASA envia cadena de letras. Las letras son: 
+	'L', 'R' y 'M'. 
+	L y R, hacen que el AM gire 90 grados ya sea a la izquierda o derecha sin moverse de su posición actual.
+	M, hace que el AM se mueva una posicion (un cuadro) en la cuadricula del altiplano manteniendo la misma posicion. Un ejemplo seria: Supongamos que viene del Norte (x,y) el movimiento seria: (x, y + 1).
+
+
+	Cada AM tiene dos líneas de entrada: 
+	 	PL : La primera linea da la posicion del AM.
+	 	SL : La segunda línea es una seria de instrucciones que indican al AM como explorar el altiplano.
+
+	DPL : La posicion se componen de dos números enteros y una letra, separados por espacios correspondientes a las coordenadas X, Y y la orientacion del AM.
+	
+	Cada AM terminara secuencialmente, lo que significa que el segundo AM no empezará moverse hasta que el primero haya terminado.
+
+	La salida de cada AM debe ser sus coordenadas finales e iniciales
+	
+- ESPECIFICACION DE LA SOLUCION
+	
+	Se debe establecer la relacion entre los datos de entrada y los datos de salida:
+
+	La primera linea de entrada es la coordenada superior derecha del altiplano, la coordenada inferior izquierda se supone que sera 0,0.
+
+	---------------------------------------------------------------------------
+	Cada AM tiene dos líneas de entrada: 
+	 	PL : La primera linea da la posicion del AM.
+	 	SL : La segunda línea es una seria de instrucciones que indican 			 al AM como explorar el altiplano.
+	--------------------------------------------------------------------------
+	
+	AMX
+	- Posicion
+		* X Y O
+		  	* X = coordenada X
+		  	* Y = coordenada Y
+		  	* O = orientacion
+		  		y
+		  		|
+		  		|
+		  		|_ _ _ _x
+
+		  		   	W
+		  		   	|
+		  		S---|--- N
+		  		   	|
+		  		   	E
+
+	- Instrucciones
+		* L R M
+			* L = left
+			* R = right
+			* M = move
+				
+				 	  |
+				 	  |
+				 	  |
+			90 L -----'+++++ 90 R	
+
+			EJEMPLO:
+						
+			Posicion: 0 2 N
+			[ ][ ][ ][ ]
+			[>][ ][ ][ ]
+			[ ][ ][ ][ ]
+			[ ][ ][ ][ ]
+			Instruccion: "RMLM"
+			=================================
+			"R" 90grados derecha
+			[  ][ ][ ][ ]
+			[\/][ ][ ][ ]
+			[  ][ ][ ][ ]
+			[  ][ ][ ][ ]
+			"M" Mover una posicion
+			[  ][ ][ ][ ]
+			[  ][ ][ ][ ]
+			[\/][ ][ ][ ]
+			[  ][ ][ ][ ]
+			"L" 90grados izquierda
+			[ ][ ][ ][ ]
+			[ ][ ][ ][ ]
+			[>][ ][ ][ ]
+			[ ][ ][ ][ ]
+			"M" Mover una posicion
+			[ ][ ][ ][ ]
+			[ ][ ][ ][ ]
+			[ ][>][ ][ ]
+			[ ][ ][ ][ ]
+			==================================
+			Resultados Final: 1 1 N
+			==================================
+
+
+
+- DISEÑAR LA SOLUCION
+
+- IMPLEMENTAR LA SOLUCION
+
+- PROBAR EL PROGRAMA
+	
+	Test Input:
+	55
+	12N
+	LMLMLMLMM
+	33E
+	MMRMMRMRRM
+	Expected Output:
+	13N
+	51E
+	==========
+
+	TEST1:
+	=================================
+	5 5
+	posicion:    1 2 N
+	instruccion: LMLMLMLMM
+						
+	[ ][ ][ ][ ][ ][ ]
+	[>][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	=================================
+	"L"
+	[ ][ ][ ][ ][ ][ ]
+	[>][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	"M" 
+	[ ][ ][ ][ ][ ][ ]
+	[>][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	"L" 
+	[ ][ ][ ][ ][ ][ ]
+	[>][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	"M" 
+	[ ][ ][ ][ ][ ][ ]
+	[>][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	"L" 
+	[ ][ ][ ][ ][ ][ ]
+	[>][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	"M" Mover una posicion
+	[ ][ ][ ][ ][ ][ ]
+	[>][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	"M" Mover una posicion
+	[ ][ ][ ][ ][ ][ ]
+	[>][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	"M" Mover una posicion
+	[ ][ ][ ][ ][ ][ ]
+	[>][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	[ ][ ][ ][ ][ ][ ]
+	==================================
+	Resultados Final: 1 1 N
+	==================================
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+- MANTENER EL PROGRAMA
