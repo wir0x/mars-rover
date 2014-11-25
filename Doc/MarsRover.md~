@@ -103,8 +103,7 @@ ESPECIFICACION DE LA SOLUCION
 DISEÑAR LA SOLUCION
 =================
 
-El diseño de la solucion esta en diagramas de flujo
-
+	La forma de diseñar en que se diseño estan el 
 IMPLEMENTAR LA SOLUCION
 ====================
 	La implementacion esta en dos clases, una Plateau, que representa a la plataforma donde aterrizara El robot
