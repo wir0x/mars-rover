@@ -7,7 +7,8 @@ La forma de aterrizarlo es mediante una serie de coordenas y orientacion, el cua
 
 Ejecutar el programa
 ===================
-Para poder correr el programa simplemente deben dirigirse a la carpeta 'Code' (MarsRovers/Code) una vez esten dentro abrir una consola y/o terminal dependiendo del sistema operativo que tengan:
+Antes debes tener instalado 'Python 2.7.3'.
+Para poder correr el programa deben dirigirse a la carpeta 'Code' (MarsRovers/Code) una vez esten dentro abrir una consola y/o terminal dependiendo del sistema operativo que tengan:
 
 En Windows:
 - shift + click-Derecho . Abrir ventana de comandos aqui.
