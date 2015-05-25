@@ -1,4 +1,4 @@
-from plateau import Plateau
+from src.plateau import Plateau
 
 
 class Rover(object):
